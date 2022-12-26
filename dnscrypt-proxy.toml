@@ -1,0 +1,13 @@
+# Empty listen_addresses to use systemd socket activation
+listen_addresses = []
+server_names = ['NAME']
+
+[static.'NAME']
+  #‌‌ Generate stamps for your server:‌ https://dnscrypt.info/stamps
+  stamp = 'sdns://xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+
+[query_log]
+  file = ''
+
+[nx_log]
+  file = ''
