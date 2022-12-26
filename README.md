@@ -6,6 +6,6 @@ Before vs After (Plain DNS requests vs HTTP/TLS requests)
 
 Tools used:
 
-- Bind9 (on server)
-- Certbot (on server)
-- dnscrypt-proxy (on client)
+- [Bind9](https://bind9.readthedocs.io/en/v9_18_10/) (on server)
+- [Certbot](https://certbot.eff.org/) (on server)
+- [DNSCrypt-proxy](https://dnscrypt.info/) (on client)
