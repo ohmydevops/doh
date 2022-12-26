@@ -1,0 +1,31 @@
+statistics-channels {
+  inet 127.0.0.1 port 8053 allow { 127.0.0.1; };
+};
+
+tls local-tls {
+   key-file "/etc/letsencrypt/live/DOMAIN_NAME/privkey.pem";
+   cert-file "/etc/letsencrypt/live/DOMAIN_NAME/fullchain.pem";
+};
+
+http local-http-server {
+  endpoints { "/dns-query";  };
+};
+
+options {
+  directory "/var/cache/bind";
+  querylog yes;
+        
+  allow-query { any;};
+  allow-recursion{ any; };
+  recursion yes;
+  dnssec-validation auto;
+
+  # Simple DNS UDP
+  listen-on-v6 port 443 { any; }; 
+  listen-on port 443 { any; };
+
+  # DNS over https 
+  listen-on port 443 tls local-tls http local-http-server {any;};
+  listen-on-v6 port 443 tls local-tls http local-http-server {any;};
+};
+
