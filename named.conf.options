@@ -21,8 +21,8 @@ options {
   dnssec-validation auto;
 
   # Simple DNS UDP
-  listen-on-v6 port 443 { any; }; 
-  listen-on port 443 { any; };
+  listen-on-v6 port 53 { any; }; 
+  listen-on port 53 { any; };
 
   # DNS over https 
   listen-on port 443 tls local-tls http local-http-server { any; };
